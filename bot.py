@@ -2,7 +2,7 @@ import discord
 from os import system as sys
 from paste import upload
 from json import loads as dictconvert
-from bottoken import token
+from tokens import token
 
 intents = discord.Intents.default()
 intents.message_content = True
