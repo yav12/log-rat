@@ -5,6 +5,7 @@ a rat to upload the logs for discord
 - internet obviously
 - a [discord bot](https://discord.com/developers/applications)
 - [discord.py](https://github.com/Rapptz/discord.py) installed to PATH or a venv
+- a [paste.ee](https://paste.ee) token
 
 ## how to use
 1. clone the repo somehow
