@@ -18,14 +18,17 @@ async def on_message(message):
         return
     if message.attachments == []:
         return
-    if message.attachments[0].filename.endswith('.txt') or message.attachments[0].filename.endswith('.log'):
-        sys(f'echo message with log found from {message.author}')
-        sys(f'curl -o log.txt {message.attachments[0].url} > /dev/null')
-        pasteoutput = dictconvert(upload(message.author))
-        link = pasteoutput['link']
-        sys('rm log.txt')
-        print("log saved to ", link)
-        await message.reply(f'Looks like you sent a log without uploading it to a paste site <a:badrat:1152755787286982739> so I took the trouble of doing it for you: \n## [click here](<{link}>)\nPlease use `?paste` in <#664874942407507978> to see a link of sites you can use to post logs, so we don\'t have to download them')
+    for i in message.attachments:
+        if message.attachments[0].filename.endswith('.txt') or message.attachments[0].filename.endswith('.log'):
+            sys(f'echo message with log found from {message.author}')
+            sys(f'curl -o log.txt {message.attachments[0].url} > /dev/null')
+            pasteoutput = dictconvert(upload(message.author))
+            link = pasteoutput['link']
+            sys('rm log.txt')
+            print("log saved to ", link)
+            await message.reply(f'Looks like you sent a log without uploading it to a paste site <a:badrat:1152755787286982739> so I took the trouble of doing it for you: \n## [click here](<{link}>)\nPlease use `?paste` in <#664874942407507978> to see a link of sites you can use to post logs, so we don\'t have to download them')
+        else: 
+            continue
 
 
 client.run(token())
