@@ -1,0 +1,5 @@
+*.log
+*.txt
+bot-env/
+__pycache__/
+tokens.py

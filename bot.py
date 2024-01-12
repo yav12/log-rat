@@ -3,7 +3,7 @@ from discord import app_commands
 from os import system as sys
 from paste import upload
 from json import loads as dictconvert
-from tokens import gettoken
+from tokens import token
 import requests
 
 intents = discord.Intents.default()
@@ -82,5 +82,5 @@ def print_links(links):
     return ''.join(logs)
 
 
-token = gettoken()
+token = token()
 client.run(token)
